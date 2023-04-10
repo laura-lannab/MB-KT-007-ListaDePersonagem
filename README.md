@@ -1,1 +1,10 @@
-# MB-KT-007-ListaDePersonagem
+# Descrição: Aplicativo base para a realização dos exercícios avaliativos do módulo MB-KT-007.
+
+## Exercício 01: SOLID
+
+Incorporar todos os princípios SOLID no projeto inicial, em códigos existentes ou criados por vocês (qualquer tipo de código que faça sentido para o app será válido), documentando cada princípio aplicado da seguinte forma:
+
+    Qual o princípio e suas características?
+    Por quê foi utilizado?
+    Quais os ganhos essa implementação irá trazer caso o app cresça?
+
