@@ -1,13 +1,18 @@
 package com.example.listapersonagens.model.mapper
 
 import com.example.listapersonagens.model.domain.Character
-import com.example.listapersonagens.model.api.DisneyCharacter
-import com.example.listapersonagens.model.api.RickyAndMortyCharacter
+import com.example.listapersonagens.model.api.DisneyCharacterResponse
+import com.example.listapersonagens.model.api.RickyAndMortyCharacterResponse
+
+//Princípio da substituição de Liskov - O princípio da substituição de Liskov declara que as
+// subclasses devem ser substituíveis por suas classes de base.
+//A classe Character, na linha 15 e 25, foram substituídas por suas devidas subclasses, sem preocupações
+// com resultados inesperados. Isso permite que o polimorfismo pode ser usado com maior confiança.
 
 @JvmName("toDisneyDomain")
-fun List<DisneyCharacter>.toDomain(): List<Character> {
+fun List<DisneyCharacterResponse>.toDomain(): List<Character> {
     return this.map {
-        Character(
+        Character.DisneyCharacter(
             name = it.name,
             imageUrl = it.imageUrl
         )
@@ -15,9 +20,9 @@ fun List<DisneyCharacter>.toDomain(): List<Character> {
 }
 
 @JvmName("toRickyAndMortyDomain")
-fun List<RickyAndMortyCharacter>.toDomain(): List<Character> {
+fun List<RickyAndMortyCharacterResponse>.toDomain(): List<Character> {
     return this.map {
-        Character(
+        Character.RickyAndMortyCharacter(
             name = it.name,
             imageUrl = it.image
         )

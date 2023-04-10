@@ -12,6 +12,8 @@ import com.example.listapersonagens.databinding.FragmentCharactersBinding
 import com.example.listapersonagens.model.domain.CharacterType.DISNEY
 import com.example.listapersonagens.model.domain.CharacterType.RICKY_AND_MORTY
 import com.example.listapersonagens.model.mapper.toDomain
+import com.example.listapersonagens.network.RetrofitHelper.disneyService
+import com.example.listapersonagens.network.RetrofitHelper.rickyAndMortyService
 import com.example.listapersonagens.network.service.DisneyService
 import com.example.listapersonagens.network.service.RickyAndMortyService
 import com.example.listapersonagens.ui.utils.adapter.CharactersAdapter
@@ -24,24 +26,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class CharactersFragment : Fragment() {
+class  CharactersFragment : Fragment() {
     
     private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
-    
-    private val retrofitDisney: Retrofit = Retrofit.Builder()
-        .baseUrl("https://api.disneyapi.dev/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    private val disneyService: DisneyService = retrofitDisney.create(DisneyService::class.java)
-    
-    private val retrofitRickyAndMorty: Retrofit = Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/api/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    private val rickyAndMortyService: RickyAndMortyService =
-        retrofitRickyAndMorty.create(RickyAndMortyService::class.java)
-    
     private val charactersAdapter = CharactersAdapter()
     
     override fun onDestroyView() {

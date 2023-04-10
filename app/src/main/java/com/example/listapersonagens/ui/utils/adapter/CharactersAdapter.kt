@@ -37,10 +37,10 @@ class CharactersAdapter :
         
         fun bind(item: Character) {
             with(binding) {
-                tvName.text = item.name
+                tvName.text = item.getName()
                 
                 Glide.with(binding.root)
-                    .load(item.imageUrl)
+                    .load(item.getImage())
                     .error(R.drawable.ic_launcher_background)
                     .into(ivImage)
             }

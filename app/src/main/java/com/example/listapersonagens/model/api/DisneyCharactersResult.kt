@@ -1,10 +1,10 @@
 package com.example.listapersonagens.model.api
 
 data class DisneyCharactersResult(
-    val data: List<DisneyCharacter>
+    val data: List<DisneyCharacterResponse>
 )
 
-data class DisneyCharacter(
+data class DisneyCharacterResponse(
     val name: String,
     val imageUrl: String
 )

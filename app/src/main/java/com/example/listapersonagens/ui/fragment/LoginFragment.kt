@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.listapersonagens.R
 import com.example.listapersonagens.databinding.FragmentLoginBinding
+import com.example.listapersonagens.network.authentication.Authenticator
 import com.example.listapersonagens.network.authentication.FirebaseAuthenticator
 
 
@@ -16,6 +17,17 @@ class LoginFragment : Fragment() {
     
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+    //Princípio da inversão da dependência - O princípio da inversão da dependência declara que
+    // nossas classes devem depender de interfaces ou de classes abstratas em vez de classes concretas e de funções.
+    //A classe FirebaseAuthenticator foi substituída pela interface Authenticator, facilitando
+    // futuras manutenções e diminuindo a propabilidade de erros. Caso exista outro authenticator
+    // e seja necessário substituir aqui, ele será modificado somente na linha 29.
+    private lateinit var authenticator: Authenticator
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        authenticator = FirebaseAuthenticator
+    }
     
     override fun onDestroyView() {
         super.onDestroyView()
@@ -38,7 +50,7 @@ class LoginFragment : Fragment() {
     private fun setupView() {
         with(binding) {
             btnLogin.setOnClickListener {
-                val isLoggedIn = FirebaseAuthenticator.login(tietEmail.text.toString(), tietPassword.text.toString())
+                val isLoggedIn = authenticator.login(tietEmail.text.toString(), tietPassword.text.toString())
                 if (isLoggedIn)
                     findNavController().navigate(R.id.action_loginFragment_to_charactersFragment)
                 else

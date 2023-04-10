@@ -1,10 +1,10 @@
 package com.example.listapersonagens.model.api
 
 data class RickyAndMortyCharacters(
-    val results: List<RickyAndMortyCharacter>
+    val results: List<RickyAndMortyCharacterResponse>
 )
 
-data class RickyAndMortyCharacter (
+data class RickyAndMortyCharacterResponse (
     val name: String,
     val image: String
 )
