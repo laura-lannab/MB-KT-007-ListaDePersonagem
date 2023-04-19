@@ -1,7 +1,7 @@
-package com.example.listapersonagens.network
+package com.example.listapersonagens.data.network
 
-import com.example.listapersonagens.network.service.DisneyService
-import com.example.listapersonagens.network.service.RickyAndMortyService
+import com.example.listapersonagens.data.network.service.DisneyService
+import com.example.listapersonagens.data.network.service.RickyAndMortyService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

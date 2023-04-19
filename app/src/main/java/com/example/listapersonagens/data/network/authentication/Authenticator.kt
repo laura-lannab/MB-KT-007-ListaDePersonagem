@@ -1,4 +1,4 @@
-package com.example.listapersonagens.network.authentication
+package com.example.listapersonagens.data.network.authentication
 
 //Princípio da segregação da interface - Segregação quer dizer manter as coisas separadas.
 // O princípio da segregação da interface tem a ver com separar as interfaces.

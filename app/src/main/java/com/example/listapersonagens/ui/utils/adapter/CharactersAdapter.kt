@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.example.listapersonagens.R
 import com.example.listapersonagens.databinding.ItemCharacterBinding
-import com.example.listapersonagens.model.domain.Character
+import com.example.listapersonagens.data.model.domain.Character
 
 
 class CharactersAdapter :

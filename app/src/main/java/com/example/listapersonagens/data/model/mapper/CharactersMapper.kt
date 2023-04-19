@@ -1,8 +1,8 @@
-package com.example.listapersonagens.model.mapper
+package com.example.listapersonagens.data.model.mapper
 
-import com.example.listapersonagens.model.domain.Character
-import com.example.listapersonagens.model.api.DisneyCharacterResponse
-import com.example.listapersonagens.model.api.RickyAndMortyCharacterResponse
+import com.example.listapersonagens.data.model.domain.Character
+import com.example.listapersonagens.data.model.api.DisneyCharacterResponse
+import com.example.listapersonagens.data.model.api.RickyAndMortyCharacterResponse
 
 //Princípio da substituição de Liskov - O princípio da substituição de Liskov declara que as
 // subclasses devem ser substituíveis por suas classes de base.

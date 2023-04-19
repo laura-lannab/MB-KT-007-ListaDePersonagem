@@ -1,4 +1,4 @@
-package com.example.listapersonagens.model.domain
+package com.example.listapersonagens.data.model.domain
 
 sealed class Character(private val name: String, private val imageUrl: String) {
     //Princípio aberto/fechado - O princípio de aberto/fechado diz que as classes devem estar
